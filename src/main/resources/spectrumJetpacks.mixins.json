@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.mayaqq.spectrumJetpacks.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "InGameHudMixin",
+    "ServerPlayerEntityMixin"
+  ],
+  "client": [
+    "PlayerEntityMixin"
+  ],
+  "server": [
+    "ServerPlayNetworkHandlerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

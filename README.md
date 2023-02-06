@@ -1,9 +1,17 @@
-# Fabric Example Mod
+<div align="center">
 
-## Setup
+# `You've got a skill issue`
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+[![Modrinth](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@2/assets/cozy/available/modrinth_64h.png)](https://modrinth.com/mod/spectrum-jetpacks/versions)
+[![Curseforge](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@2/assets/cozy/available/curseforge_64h.png)](https://www.curseforge.com/minecraft/mc-mods/spectrum-jetpacks)
+[![Github](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@2/assets/cozy/available/github_64h.png)](https://github.com/MayaqqDev/spectrum-jetpacks/)
+## `Information`
 
-## License
+Adds jetpacks but instead of energy it runs on ink from spectrum!
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+## `Community`
+
+For any questions or support you can join my discord by clicking the button below!
+
+[![Discord Server](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@2/assets/cozy/social/discord-singular_64h.png)](https://discord.gg/w7PpGax9Bq)
+</div>
