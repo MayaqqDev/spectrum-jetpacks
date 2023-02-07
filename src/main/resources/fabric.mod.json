@@ -14,7 +14,7 @@
   },
 
   "license": "LGPL-3",
-  "icon": "assets/spectrumJetpacks/icon.png",
+  "icon": "assets/spectrumjetpacks/icon.png",
 
   "environment": "*",
   "entrypoints": {
@@ -23,10 +23,13 @@
     ],
     "client": [
       "dev.mayaqq.spectrumJetpacks.SpectrumJetpacksClient"
+    ],
+    "modmenu": [
+      "dev.mayaqq.spectrumJetpacks.integrations.ModMenuIntegration"
     ]
   },
   "mixins": [
-    "spectrumJetpacks.mixins.json"
+    "spectrumjetpacks.mixins.json"
   ],
 
   "depends": {

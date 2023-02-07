@@ -1,0 +1,22 @@
+
+{
+  "name": "Jetpacks",
+  "advancement": "spectrum:midgame/place_color_picker",
+  "icon": "spectrumjetpacks:gemstone_jetpack",
+  "category": "spectrum:magic_category",
+  "extra_recipe_mappings": {
+    "spectrumjetpacks:gemstone_jetpack": 0
+  },
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "After hours of tinkering with the new found all powerful ink, you finally succeeded in harnessing its energy to create a remarkable invention - the jetpack. The sleek design, made from assortments of items, allows you to explore the skies in style. The jetpack uses the purple ink to soar high into the air, giving you the freedom to reach new heights and experience the world in a whole new way. As you soar, you'll find that the ink energy source is not limitless, so be mindful of your usage and plan your flights accordingly. Get ready for the ultimate adventure, as you take flight with the power of the jetpack."
+    },
+    {
+      "type": "spectrum:pedestal_crafting",
+      "title": "Pedestal Recipe",
+      "recipe": "spectrumjetpacks:pedestal/jetpacks/gemstone_jetpack",
+      "text": "The first in a series of jetpacks, the Gemstone Jetpack is the most basic of the bunch. It is crafted using a variety of materials, including fire charge for ignition, and is the perfect way to get started with your new invention. Do not forget to charge it up before takeoff!"
+    }
+  ]
+}

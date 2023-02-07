@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "spectrumjetpacks:item/gemstone_jetpack"
+  }
+}

@@ -5,9 +5,11 @@ import de.dafuqs.spectrum.energy.color.InkColor;
 import de.dafuqs.spectrum.energy.storage.FixedSingleInkStorage;
 import de.dafuqs.spectrum.items.trinkets.SpectrumTrinketItem;
 import dev.emi.trinkets.api.SlotReference;
+import dev.mayaqq.spectrumJetpacks.utils.PlayerExtensionsForTheJetPackMod;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
@@ -16,7 +18,10 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public abstract class JetpackItem extends SpectrumTrinketItem implements InkStorageItem<FixedSingleInkStorage> {
+import static dev.mayaqq.spectrumJetpacks.SpectrumJetpacksClient.hoverKey;
+import static dev.mayaqq.spectrumJetpacks.SpectrumJetpacksClient.toggleKey;
+
+public class JetpackItem extends SpectrumTrinketItem implements InkStorageItem<FixedSingleInkStorage> {
 
     public final InkColor inkColor;
     public final long maxInk;
@@ -31,12 +36,11 @@ public abstract class JetpackItem extends SpectrumTrinketItem implements InkStor
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         FixedSingleInkStorage inkStorage = getEnergyStorage(stack);
         long storedInk = inkStorage.getEnergy(inkStorage.getStoredColor());
-
-        if (storedInk == maxInk) {
-            tooltip.add(Text.translatable("spectrum.tooltip.ink_drain.tooltip.maxed_out").formatted(Formatting.GRAY));
-        } else {
-            tooltip.add(Text.literal("Stored Ink: " + storedInk).formatted(Formatting.GRAY));
-        }
+        tooltip.add(Text.literal("Stored Ink: " + storedInk).formatted(Formatting.GRAY));
+        tooltip.add(Text.of(" "));
+        tooltip.add(Text.translatable("item.spectrumjetpacks.jetpack.desc.toggle", toggleKey.getBoundKeyLocalizedText().getString().toUpperCase()).formatted(Formatting.GRAY));
+        tooltip.add(Text.translatable("item.spectrumjetpacks.jetpack.desc.hover", hoverKey.getBoundKeyLocalizedText().getString().toUpperCase()).formatted(Formatting.GRAY));
+        tooltip.add(Text.of(" "));
     }
     @Override
     public boolean canEquip(ItemStack stack, SlotReference slot, LivingEntity entity) {
@@ -44,7 +48,25 @@ public abstract class JetpackItem extends SpectrumTrinketItem implements InkStor
     }
 
     @Override
-    public void onEquip(ItemStack stack, SlotReference slot, LivingEntity entity) {
-        super.onEquip(stack, slot, entity);
+    public void onUnequip(ItemStack stack, SlotReference slot, LivingEntity entity) {
+        super.onUnequip(stack, slot, entity);
+        ((PlayerExtensionsForTheJetPackMod) entity).setHasRecentlyUsedJetPack(false);
+    }
+
+    @Override
+    public FixedSingleInkStorage getEnergyStorage(ItemStack itemStack) {
+        NbtCompound compound = itemStack.getNbt();
+        return compound != null && compound.contains("EnergyStore") ? FixedSingleInkStorage.fromNbt(compound.getCompound("EnergyStore")) : new FixedSingleInkStorage(this.maxInk, this.inkColor);
+    }
+
+    @Override
+    public void setEnergyStorage(ItemStack itemStack, FixedSingleInkStorage storage) {
+        NbtCompound compound = itemStack.getOrCreateNbt();
+        compound.put("EnergyStore", storage.toNbt());
+    }
+
+    @Override
+    public Drainability getDrainability() {
+        return Drainability.PLAYER_ONLY;
     }
 }

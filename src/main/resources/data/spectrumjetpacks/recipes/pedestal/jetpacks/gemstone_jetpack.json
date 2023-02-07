@@ -1,0 +1,38 @@
+{
+  "type": "spectrum:pedestal",
+  "time": 1600,
+  "tier": "simple",
+  "cyan": 4,
+  "magenta": 4,
+  "yellow": 4,
+  "black": 0,
+  "white": 0,
+  "experience": 2.0,
+  "pattern": [
+    "TPT",
+    "ACA",
+    "ASA"
+  ],
+  "key": {
+    "T": {
+      "item": "spectrum:topaz_shard"
+    },
+    "A": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "C": {
+      "item": "spectrum:citrine_shard"
+    },
+    "S": {
+      "item": "spectrum:star_fragment"
+    },
+    "P": {
+      "tag": "spectrum:pigments"
+    }
+  },
+  "result": {
+    "item": "spectrumjetpacks:gemstone_jetpack",
+    "count": 1
+  },
+  "required_advancement": "spectrum:midgame/place_color_picker"
+}

@@ -1,0 +1,24 @@
+{
+  "display": {
+    "icon": {
+      "item": "spectrumjetpacks:gemstone_jetpack"
+    },
+    "title": {
+      "translate": "advancements.spectrumjetpacks.craft_gemstone_jetpack.title"
+    },
+    "description": {
+      "translate": "advancements.spectrumjetpacks.craft_gemstone_jetpack.description"
+    }
+  },
+  "parent": "spectrum:collect_pigment",
+  "criteria": {
+    "craft": {
+      "trigger":"spectrum:crafted_with_pedestal",
+      "conditions": { "items": [{ "items": [ "spectrumjetpacks:gemstone_jetpack" ]}] }
+    },
+    "gotten_previous": {
+      "trigger":"revelationary:advancement_gotten",
+      "conditions": { "advancement_identifier": "spectrum:midgame/place_color_picker" }
+    }
+  }
+}s

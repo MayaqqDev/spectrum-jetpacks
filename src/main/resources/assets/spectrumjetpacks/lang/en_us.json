@@ -1,0 +1,16 @@
+{
+  "item.spectrumjetpacks.gemstone_jetpack": "Gemstone Jetpack",
+
+  "item.spectrumjetpacks.jetpack.desc.toggle": "Toggle: [%s]",
+    "item.spectrumjetpacks.jetpack.desc.hover": "Hover: [%s]",
+
+  "category.spectrumjetpacks": "Spectrum Jetpacks",
+  "key.spectrumjetpacks.toggle": "Toggle Jetpack Propel",
+  "key.spectrumjetpacks.hover": "Toggle Jetpack Hover",
+
+
+  "text.autoconfig.spectrumjetpacks.title": "Spectrum Jetpacks",
+  "text.autoconfig.spectrumjetpacks.option.soundsEnabled": "Enable Jetpack Sounds",
+  "text.autoconfig.spectrumjetpacks.option.inkUsagePerTick": "Ink Usage Per Tick",
+  "text.autoconfig.spectrumjetpacks.option.inkUsagePerTickHovering": "Ink Usage Per Tick Hovering"
+}
