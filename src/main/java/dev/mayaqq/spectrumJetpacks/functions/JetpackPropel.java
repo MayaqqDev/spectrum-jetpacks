@@ -32,22 +32,27 @@ public class JetpackPropel {
             FixedSingleInkStorage inkStorage = EquipUtils.getEnergyStorage(jetpack);
             long storedInk = inkStorage.getEnergy(inkStorage.getStoredColor());
             PacketByteBuf buf = PacketByteBufs.create();
-            if (CONFIG.soundsEnabled) {
-                player.playSound(SoundEvents.BLOCK_AMETHYST_BLOCK_CHIME, SoundCategory.PLAYERS, 0.2f, 1.0f);
-            }
             if (MinecraftClient.getInstance().options.jumpKey.isPressed() && storedInk > 0) {
                 player.setVelocity(player.getVelocity().x, Math.min(propelMax, player.getVelocity().y + propelSpeed), player.getVelocity().z);
+                sound(player);
                 buf.writeBoolean(false);
                 ClientPlayNetworking.send(new Identifier("spectrumjetpacks", "propel"), buf);
             } else if (player.isSneaking() && storedInk > 0) {
                 player.setVelocity(player.getVelocity().x, Math.max(-propelMax, player.getVelocity().y - propelSpeed), player.getVelocity().z);
+                sound(player);
                 buf.writeBoolean(false);
                 ClientPlayNetworking.send(new Identifier("spectrumjetpacks", "propel"), buf);
             } else if (hoverKey.isPressed() && storedInk > 0) {
                 player.setVelocity(player.getVelocity().x, Math.max(0.0, player.getVelocity().y), player.getVelocity().z);
+                sound(player);
                 buf.writeBoolean(true);
                 ClientPlayNetworking.send(new Identifier("spectrumjetpacks", "propel"), buf);
             }
+        }
+    }
+    private static void sound(PlayerEntity player) {
+        if (CONFIG.soundsEnabled) {
+            player.playSound(SoundEvents.BLOCK_AMETHYST_BLOCK_CHIME, SoundCategory.PLAYERS, 0.2f, 1.0f);
         }
     }
 }
