@@ -1,6 +1,6 @@
-package dev.mayaqq.spectrumJetpacks.mixin;
+package dev.mayaqq.spectrumadditions.mixin;
 
-import dev.mayaqq.spectrumJetpacks.utils.PlayerExtensionsForTheJetPackMod;
+import dev.mayaqq.spectrumadditions.utils.PlayerExtensionsForTheJetPackMod;
 import net.minecraft.server.network.ServerPlayNetworkHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;

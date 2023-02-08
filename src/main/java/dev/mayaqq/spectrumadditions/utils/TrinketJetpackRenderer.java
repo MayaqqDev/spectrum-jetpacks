@@ -1,4 +1,4 @@
-package dev.mayaqq.spectrumJetpacks.utils;
+package dev.mayaqq.spectrumadditions.utils;
 
 import dev.emi.trinkets.api.SlotReference;
 import dev.emi.trinkets.api.client.TrinketRenderer;

@@ -1,8 +1,8 @@
-package dev.mayaqq.spectrumJetpacks.integrations;
+package dev.mayaqq.spectrumadditions.integrations;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
-import dev.mayaqq.spectrumJetpacks.config.SpectrumJetpacksConfig;
+import dev.mayaqq.spectrumadditions.config.SpectrumAdditionsConfig;
 import me.shedaniel.autoconfig.AutoConfig;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -11,6 +11,6 @@ import net.fabricmc.api.Environment;
 public class ModMenuIntegration implements ModMenuApi {
     @Override
     public ConfigScreenFactory<?> getModConfigScreenFactory() {
-        return parent -> AutoConfig.getConfigScreen(SpectrumJetpacksConfig.class, parent).get();
+        return parent -> AutoConfig.getConfigScreen(SpectrumAdditionsConfig.class, parent).get();
     }
 }

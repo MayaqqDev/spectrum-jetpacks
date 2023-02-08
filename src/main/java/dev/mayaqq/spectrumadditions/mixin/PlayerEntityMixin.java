@@ -1,8 +1,8 @@
-package dev.mayaqq.spectrumJetpacks.mixin;
+package dev.mayaqq.spectrumadditions.mixin;
 
-import dev.mayaqq.spectrumJetpacks.functions.JetpackPropel;
-import dev.mayaqq.spectrumJetpacks.utils.EquipUtils;
-import dev.mayaqq.spectrumJetpacks.utils.PlayerExtensionsForTheJetPackMod;
+import dev.mayaqq.spectrumadditions.functions.JetpackPropel;
+import dev.mayaqq.spectrumadditions.utils.EquipUtils;
+import dev.mayaqq.spectrumadditions.utils.PlayerExtensionsForTheJetPackMod;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.entity.player.PlayerEntity;

@@ -1,35 +1,35 @@
 {
   "schemaVersion": 1,
-  "id": "spectrumjetpacks",
+  "id": "spectrumadditions",
   "version": "${version}",
 
-  "name": "Spectrum Jetpacks",
-  "description": "Jetpacks but gay!",
+  "name": "Spectrum Additions",
+  "description": "An addon for the Spectrum mod that adds lots of utilities and features that wouldn't fit in the main mod.",
   "authors": [
     "Mayaqq"
   ],
   "contact": {
     "homepage": "https://mayaqq.dev",
-    "sources": "https://github.com/MayaqqDev/Spectrum-Jetpacks"
+    "sources": "https://github.com/MayaqqDev/Spectrum-Additions"
   },
 
   "license": "LGPL-3",
-  "icon": "assets/spectrumjetpacks/icon.png",
+  "icon": "assets/spectrumadditions/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "dev.mayaqq.spectrumJetpacks.SpectrumJetpacks"
+      "dev.mayaqq.spectrumadditions.SpectrumAdditions"
     ],
     "client": [
-      "dev.mayaqq.spectrumJetpacks.SpectrumJetpacksClient"
+      "dev.mayaqq.spectrumadditions.SpectrumAdditionsClient"
     ],
     "modmenu": [
-      "dev.mayaqq.spectrumJetpacks.integrations.ModMenuIntegration"
+      "dev.mayaqq.spectrumadditions.integrations.ModMenuIntegration"
     ]
   },
   "mixins": [
-    "spectrumjetpacks.mixins.json"
+    "spectrumadditions.mixins.json"
   ],
 
   "depends": {

@@ -1,4 +1,4 @@
-package dev.mayaqq.spectrumJetpacks.utils;
+package dev.mayaqq.spectrumadditions.utils;
 
 import de.dafuqs.spectrum.energy.color.InkColor;
 import de.dafuqs.spectrum.energy.storage.FixedSingleInkStorage;
@@ -6,7 +6,7 @@ import dev.emi.trinkets.api.SlotReference;
 import dev.emi.trinkets.api.TrinketComponent;
 import dev.emi.trinkets.api.TrinketInventory;
 import dev.emi.trinkets.api.TrinketsApi;
-import dev.mayaqq.spectrumJetpacks.items.JetpackItem;
+import dev.mayaqq.spectrumadditions.items.JetpackItem;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DyeColor;
@@ -14,7 +14,7 @@ import net.minecraft.util.Pair;
 
 import java.util.Optional;
 
-import static dev.mayaqq.spectrumJetpacks.SpectrumJetpacks.GEMSTONE_JETPACK;
+import static dev.mayaqq.spectrumadditions.SpectrumAdditions.GEMSTONE_JETPACK;
 
 public class EquipUtils {
     public static int hasJetpack(PlayerEntity player) {

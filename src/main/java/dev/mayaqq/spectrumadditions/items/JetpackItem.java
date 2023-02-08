@@ -1,11 +1,11 @@
-package dev.mayaqq.spectrumJetpacks.items;
+package dev.mayaqq.spectrumadditions.items;
 
 import de.dafuqs.spectrum.energy.InkStorageItem;
 import de.dafuqs.spectrum.energy.color.InkColor;
 import de.dafuqs.spectrum.energy.storage.FixedSingleInkStorage;
 import de.dafuqs.spectrum.items.trinkets.SpectrumTrinketItem;
 import dev.emi.trinkets.api.SlotReference;
-import dev.mayaqq.spectrumJetpacks.utils.PlayerExtensionsForTheJetPackMod;
+import dev.mayaqq.spectrumadditions.utils.PlayerExtensionsForTheJetPackMod;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
@@ -18,8 +18,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-import static dev.mayaqq.spectrumJetpacks.SpectrumJetpacksClient.hoverKey;
-import static dev.mayaqq.spectrumJetpacks.SpectrumJetpacksClient.toggleKey;
+import static dev.mayaqq.spectrumadditions.SpectrumAdditionsClient.hoverKey;
+import static dev.mayaqq.spectrumadditions.SpectrumAdditionsClient.toggleKey;
 
 public class JetpackItem extends SpectrumTrinketItem implements InkStorageItem<FixedSingleInkStorage> {
 
@@ -38,8 +38,8 @@ public class JetpackItem extends SpectrumTrinketItem implements InkStorageItem<F
         long storedInk = inkStorage.getEnergy(inkStorage.getStoredColor());
         tooltip.add(Text.literal("Stored Ink: " + storedInk).formatted(Formatting.GRAY));
         tooltip.add(Text.of(" "));
-        tooltip.add(Text.translatable("item.spectrumjetpacks.jetpack.desc.toggle", toggleKey.getBoundKeyLocalizedText().getString().toUpperCase()).formatted(Formatting.GRAY));
-        tooltip.add(Text.translatable("item.spectrumjetpacks.jetpack.desc.hover", hoverKey.getBoundKeyLocalizedText().getString().toUpperCase()).formatted(Formatting.GRAY));
+        tooltip.add(Text.translatable("item.spectrumadditions.jetpack.desc.toggle", toggleKey.getBoundKeyLocalizedText().getString().toUpperCase()).formatted(Formatting.GRAY));
+        tooltip.add(Text.translatable("item.spectrumadditions.jetpack.desc.hover", hoverKey.getBoundKeyLocalizedText().getString().toUpperCase()).formatted(Formatting.GRAY));
         tooltip.add(Text.of(" "));
     }
     @Override

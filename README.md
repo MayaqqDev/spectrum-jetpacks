@@ -1,13 +1,13 @@
 <div align="center">
 
-# `Spectrum Jetpacks`
+# `Spectrum Additions`
 
-[![Modrinth](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@2/assets/cozy/available/modrinth_64h.png)](https://modrinth.com/mod/spectrum-jetpacks/versions)
-[![Curseforge](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@2/assets/cozy/available/curseforge_64h.png)](https://www.curseforge.com/minecraft/mc-mods/spectrum-jetpacks)
-[![Github](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@2/assets/cozy/available/github_64h.png)](https://github.com/MayaqqDev/spectrum-jetpacks/)
+[![Modrinth](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@2/assets/cozy/available/modrinth_64h.png)](https://modrinth.com/mod/spectrum-additions/versions)
+[![Curseforge](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@2/assets/cozy/available/curseforge_64h.png)](https://www.curseforge.com/minecraft/mc-mods/spectrum-additions)
+[![Github](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@2/assets/cozy/available/github_64h.png)](https://github.com/MayaqqDev/spectrum-additions/)
 ## `Information`
 
-Adds jetpacks but instead of energy it runs on ink from spectrum! Just play along the spectrum progression and you'll find them in the progression!
+Adds a bunch of utilities to the spectrum mod that wouldn't fit in the main mod.
 
 ## `Community`
 

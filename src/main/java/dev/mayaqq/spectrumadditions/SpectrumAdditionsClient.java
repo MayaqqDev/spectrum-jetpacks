@@ -1,9 +1,8 @@
-package dev.mayaqq.spectrumJetpacks;
+package dev.mayaqq.spectrumadditions;
 
 import dev.emi.trinkets.api.client.TrinketRendererRegistry;
-import dev.mayaqq.spectrumJetpacks.items.JetpackItem;
-import dev.mayaqq.spectrumJetpacks.utils.EquipUtils;
-import dev.mayaqq.spectrumJetpacks.utils.TrinketJetpackRenderer;
+import dev.mayaqq.spectrumadditions.utils.EquipUtils;
+import dev.mayaqq.spectrumadditions.utils.TrinketJetpackRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
@@ -14,9 +13,9 @@ import net.minecraft.client.option.StickyKeyBinding;
 import net.minecraft.text.Text;
 import org.lwjgl.glfw.GLFW;
 
-import static dev.mayaqq.spectrumJetpacks.SpectrumJetpacks.GEMSTONE_JETPACK;
+import static dev.mayaqq.spectrumadditions.SpectrumAdditions.GEMSTONE_JETPACK;
 
-public class SpectrumJetpacksClient implements ClientModInitializer {
+public class SpectrumAdditionsClient implements ClientModInitializer {
     public static KeyBinding toggleKey;
     public static KeyBinding hoverKey;
 
@@ -24,15 +23,15 @@ public class SpectrumJetpacksClient implements ClientModInitializer {
     public void onInitializeClient() {
         TrinketRendererRegistry.registerRenderer(GEMSTONE_JETPACK, new TrinketJetpackRenderer());
         toggleKey = KeyBindingHelper.registerKeyBinding(new StickyKeyBinding(
-                "key.spectrumjetpacks.toggle",
+                "key.spectrumadditions.toggle",
                 GLFW.GLFW_KEY_DELETE,
-                "category.spectrumjetpacks",
+                "category.spectrumadditions",
                 () -> true
         ));
         hoverKey = KeyBindingHelper.registerKeyBinding(new StickyKeyBinding(
-                "key.spectrumjetpacks.hover",
+                "key.spectrumadditions.hover",
                 GLFW.GLFW_KEY_INSERT,
-                "category.spectrumjetpacks",
+                "category.spectrumadditions",
                 () -> true
         ));
 

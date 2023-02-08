@@ -1,8 +1,7 @@
-package dev.mayaqq.spectrumJetpacks.functions;
+package dev.mayaqq.spectrumadditions.functions;
 
 import de.dafuqs.spectrum.energy.storage.FixedSingleInkStorage;
-import dev.mayaqq.spectrumJetpacks.items.JetpackItem;
-import dev.mayaqq.spectrumJetpacks.utils.EquipUtils;
+import dev.mayaqq.spectrumadditions.utils.EquipUtils;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.minecraft.client.MinecraftClient;
@@ -11,11 +10,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.Identifier;
 
-import static dev.mayaqq.spectrumJetpacks.SpectrumJetpacks.CONFIG;
-import static dev.mayaqq.spectrumJetpacks.SpectrumJetpacksClient.hoverKey;
-import static dev.mayaqq.spectrumJetpacks.SpectrumJetpacksClient.toggleKey;
+import static dev.mayaqq.spectrumadditions.SpectrumAdditions.CONFIG;
+import static dev.mayaqq.spectrumadditions.SpectrumAdditions.id;
+import static dev.mayaqq.spectrumadditions.SpectrumAdditionsClient.hoverKey;
+import static dev.mayaqq.spectrumadditions.SpectrumAdditionsClient.toggleKey;
 
 
 
@@ -36,17 +35,17 @@ public class JetpackPropel {
                 player.setVelocity(player.getVelocity().x, Math.min(propelMax, player.getVelocity().y + propelSpeed), player.getVelocity().z);
                 sound(player);
                 buf.writeBoolean(false);
-                ClientPlayNetworking.send(new Identifier("spectrumjetpacks", "propel"), buf);
+                ClientPlayNetworking.send(id("propel"), buf);
             } else if (player.isSneaking() && storedInk > 0) {
                 player.setVelocity(player.getVelocity().x, Math.max(-propelMax, player.getVelocity().y - propelSpeed), player.getVelocity().z);
                 sound(player);
                 buf.writeBoolean(false);
-                ClientPlayNetworking.send(new Identifier("spectrumjetpacks", "propel"), buf);
+                ClientPlayNetworking.send(id("propel"), buf);
             } else if (hoverKey.isPressed() && storedInk > 0) {
                 player.setVelocity(player.getVelocity().x, Math.max(0.0, player.getVelocity().y), player.getVelocity().z);
                 sound(player);
                 buf.writeBoolean(true);
-                ClientPlayNetworking.send(new Identifier("spectrumjetpacks", "propel"), buf);
+                ClientPlayNetworking.send(id("propel"), buf);
             }
         }
     }

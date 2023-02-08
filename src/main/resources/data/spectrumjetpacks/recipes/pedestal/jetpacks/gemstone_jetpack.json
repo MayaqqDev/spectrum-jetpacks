@@ -31,7 +31,7 @@
     }
   },
   "result": {
-    "item": "spectrumjetpacks:gemstone_jetpack",
+    "item": "spectrumadditions:gemstone_jetpack",
     "count": 1
   },
   "required_advancement": "spectrum:midgame/place_color_picker"

@@ -2,10 +2,10 @@
 {
   "name": "Jetpacks",
   "advancement": "spectrum:midgame/place_color_picker",
-  "icon": "spectrumjetpacks:gemstone_jetpack",
+  "icon": "spectrumadditions:gemstone_jetpack",
   "category": "spectrum:magic_category",
   "extra_recipe_mappings": {
-    "spectrumjetpacks:gemstone_jetpack": 0
+    "spectrumadditions:gemstone_jetpack": 0
   },
   "pages": [
     {
@@ -15,7 +15,7 @@
     {
       "type": "spectrum:pedestal_crafting",
       "title": "Pedestal Recipe",
-      "recipe": "spectrumjetpacks:pedestal/jetpacks/gemstone_jetpack",
+      "recipe": "spectrumadditions:pedestal/jetpacks/gemstone_jetpack",
       "text": "The first in a series of jetpacks, the Gemstone Jetpack is the most basic of the bunch. It is crafted using a variety of materials, including fire charge for ignition, and is the perfect way to get started with your new invention. Do not forget to charge it up before takeoff!"
     }
   ]

@@ -1,15 +1,15 @@
-package dev.mayaqq.spectrumJetpacks.networking;
+package dev.mayaqq.spectrumadditions.networking;
 
 import de.dafuqs.spectrum.energy.storage.FixedSingleInkStorage;
 import de.dafuqs.spectrum.particle.SpectrumParticleTypes;
-import dev.mayaqq.spectrumJetpacks.items.JetpackItem;
-import dev.mayaqq.spectrumJetpacks.utils.EquipUtils;
-import dev.mayaqq.spectrumJetpacks.utils.PlayerExtensionsForTheJetPackMod;
+import dev.mayaqq.spectrumadditions.items.JetpackItem;
+import dev.mayaqq.spectrumadditions.utils.EquipUtils;
+import dev.mayaqq.spectrumadditions.utils.PlayerExtensionsForTheJetPackMod;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.item.ItemStack;
 
-import static dev.mayaqq.spectrumJetpacks.SpectrumJetpacks.CONFIG;
-import static dev.mayaqq.spectrumJetpacks.SpectrumJetpacks.id;
+import static dev.mayaqq.spectrumadditions.SpectrumAdditions.CONFIG;
+import static dev.mayaqq.spectrumadditions.SpectrumAdditions.id;
 
 public class Packets {
     public static void register() {

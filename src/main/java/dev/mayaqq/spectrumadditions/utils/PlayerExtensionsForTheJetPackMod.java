@@ -1,4 +1,4 @@
-package dev.mayaqq.spectrumJetpacks.utils;
+package dev.mayaqq.spectrumadditions.utils;
 
 public interface PlayerExtensionsForTheJetPackMod {
     boolean hasRecentlyUsedJetPack();

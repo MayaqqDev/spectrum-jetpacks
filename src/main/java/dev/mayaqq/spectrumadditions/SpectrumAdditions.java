@@ -1,11 +1,11 @@
-package dev.mayaqq.spectrumJetpacks;
+package dev.mayaqq.spectrumadditions;
 
 import de.dafuqs.spectrum.energy.color.InkColor;
 
 import de.dafuqs.spectrum.registries.SpectrumItemGroups;
-import dev.mayaqq.spectrumJetpacks.config.SpectrumJetpacksConfig;
-import dev.mayaqq.spectrumJetpacks.items.JetpackItem;
-import dev.mayaqq.spectrumJetpacks.networking.Packets;
+import dev.mayaqq.spectrumadditions.config.SpectrumAdditionsConfig;
+import dev.mayaqq.spectrumadditions.items.JetpackItem;
+import dev.mayaqq.spectrumadditions.networking.Packets;
 import io.wispforest.owo.itemgroup.OwoItemSettings;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
@@ -17,13 +17,13 @@ import net.minecraft.util.registry.Registry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class SpectrumJetpacks implements ModInitializer {
-	public static final Logger LOGGER = LoggerFactory.getLogger("spectrumJetpacks");
+public class SpectrumAdditions implements ModInitializer {
+	public static final Logger LOGGER = LoggerFactory.getLogger("spectrumAdditions");
 	public static Identifier id(String path) {
-		return new Identifier("spectrumjetpacks", path);
+		return new Identifier("spectrumadditions", path);
 	}
 	static OwoItemSettings settings = new OwoItemSettings().group(SpectrumItemGroups.ITEM_GROUP_GENERAL).tab(1).rarity(Rarity.RARE);
-	public static SpectrumJetpacksConfig CONFIG;
+	public static SpectrumAdditionsConfig CONFIG;
 
 	//register items
 	public static final JetpackItem GEMSTONE_JETPACK = Registry.register(Registry.ITEM, id("gemstone_jetpack"), new JetpackItem(settings, id("gemstone_jetpack"), InkColor.of(DyeColor.PURPLE), 5000));
@@ -32,7 +32,7 @@ public class SpectrumJetpacks implements ModInitializer {
 	public void onInitialize() {
 		LOGGER.info("To the sky!");
 		Packets.register();
-		AutoConfig.register(SpectrumJetpacksConfig.class, JanksonConfigSerializer::new);
-		CONFIG = AutoConfig.getConfigHolder(SpectrumJetpacksConfig.class).getConfig();
+		AutoConfig.register(SpectrumAdditionsConfig.class, JanksonConfigSerializer::new);
+		CONFIG = AutoConfig.getConfigHolder(SpectrumAdditionsConfig.class).getConfig();
 	}
 }
