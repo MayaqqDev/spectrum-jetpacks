@@ -1,6 +1,5 @@
 package dev.mayaqq.spectrumJetpacks;
 
-import de.dafuqs.spectrum.config.SpectrumConfig;
 import de.dafuqs.spectrum.energy.color.InkColor;
 
 import de.dafuqs.spectrum.registries.SpectrumItemGroups;
