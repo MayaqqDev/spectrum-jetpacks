@@ -13,12 +13,22 @@
   "parent": "spectrum:collect_pigment",
   "criteria": {
     "craft": {
-      "trigger":"spectrum:crafted_with_pedestal",
-      "conditions": { "items": [{ "items": [ "spectrumadditions:gemstone_jetpack" ]}] }
+      "trigger": "spectrum:crafted_with_pedestal",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spectrumadditions:gemstone_jetpack"
+            ]
+          }
+        ]
+      }
     },
     "gotten_previous": {
-      "trigger":"revelationary:advancement_gotten",
-      "conditions": { "advancement_identifier": "spectrum:midgame/place_color_picker" }
+      "trigger": "revelationary:advancement_gotten",
+      "conditions": {
+        "advancement_identifier": "spectrum:midgame/place_color_picker"
+      }
     }
   }
 }

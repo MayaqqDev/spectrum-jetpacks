@@ -13,6 +13,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(PlayerEntity.class)
 public abstract class PlayerEntityMixin implements PlayerExtensionsForTheJetPackMod {
+    private boolean hasRecentlyUsedJetPack;
+
     @Inject(method = "tick", at = @At("TAIL"))
     @Environment(EnvType.CLIENT)
     public void jetpackTick(CallbackInfo ci) {
@@ -21,7 +23,14 @@ public abstract class PlayerEntityMixin implements PlayerExtensionsForTheJetPack
             JetpackPropel.propel(player);
         }
     }
-    private boolean hasRecentlyUsedJetPack;
-    @Override public boolean hasRecentlyUsedJetPack() { return hasRecentlyUsedJetPack; }
-    @Override public void setHasRecentlyUsedJetPack(boolean newValue) { hasRecentlyUsedJetPack = newValue; }
+
+    @Override
+    public boolean hasRecentlyUsedJetPack() {
+        return hasRecentlyUsedJetPack;
+    }
+
+    @Override
+    public void setHasRecentlyUsedJetPack(boolean newValue) {
+        hasRecentlyUsedJetPack = newValue;
+    }
 }

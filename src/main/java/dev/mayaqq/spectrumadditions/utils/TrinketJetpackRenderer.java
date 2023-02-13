@@ -23,7 +23,7 @@ public class TrinketJetpackRenderer implements TrinketRenderer {
         matrices.translate(0, -0.2, -0.25);
 
         // Shifting
-        if(player.isInSneakingPose()) {
+        if (player.isInSneakingPose()) {
             matrices.multiply(Vec3f.POSITIVE_X.getDegreesQuaternion(25));
             matrices.translate(0, -0.2, 0);
         }

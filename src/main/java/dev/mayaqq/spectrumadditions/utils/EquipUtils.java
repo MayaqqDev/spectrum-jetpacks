@@ -14,7 +14,7 @@ import net.minecraft.util.Pair;
 
 import java.util.Optional;
 
-import static dev.mayaqq.spectrumadditions.SpectrumAdditions.GEMSTONE_JETPACK;
+import static dev.mayaqq.spectrumadditions.registries.SpectrumAdditionsItems.GEMSTONE_JETPACK;
 
 public class EquipUtils {
     public static int hasJetpack(PlayerEntity player) {
@@ -26,6 +26,7 @@ public class EquipUtils {
         }
         return 0;
     }
+
     public static ItemStack getJetpack(PlayerEntity player) {
         Optional<TrinketComponent> component = TrinketsApi.getTrinketComponent(player);
         for (Pair<SlotReference, ItemStack> pair : component.get().getEquipped(item -> true)) {
@@ -42,6 +43,7 @@ public class EquipUtils {
     public static FixedSingleInkStorage getEnergyStorage(ItemStack stack) {
         return ((JetpackItem) stack.getItem()).getEnergyStorage(stack);
     }
+
     public static long getEnergy(ItemStack stack) {
         try {
             FixedSingleInkStorage inkStorage = ((JetpackItem) stack.getItem()).getEnergyStorage(stack);

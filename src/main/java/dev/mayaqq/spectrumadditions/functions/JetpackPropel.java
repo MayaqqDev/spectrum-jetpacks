@@ -12,10 +12,9 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 
 import static dev.mayaqq.spectrumadditions.SpectrumAdditions.CONFIG;
-import static dev.mayaqq.spectrumadditions.SpectrumAdditions.id;
+import static dev.mayaqq.spectrumadditions.SpectrumAdditions.saId;
 import static dev.mayaqq.spectrumadditions.SpectrumAdditionsClient.hoverKey;
 import static dev.mayaqq.spectrumadditions.SpectrumAdditionsClient.toggleKey;
-
 
 
 public class JetpackPropel {
@@ -35,20 +34,21 @@ public class JetpackPropel {
                 player.setVelocity(player.getVelocity().x, Math.min(propelMax, player.getVelocity().y + propelSpeed), player.getVelocity().z);
                 sound(player);
                 buf.writeBoolean(false);
-                ClientPlayNetworking.send(id("propel"), buf);
+                ClientPlayNetworking.send(saId("propel"), buf);
             } else if (player.isSneaking() && storedInk > 0) {
                 player.setVelocity(player.getVelocity().x, Math.max(-propelMax, player.getVelocity().y - propelSpeed), player.getVelocity().z);
                 sound(player);
                 buf.writeBoolean(false);
-                ClientPlayNetworking.send(id("propel"), buf);
+                ClientPlayNetworking.send(saId("propel"), buf);
             } else if (hoverKey.isPressed() && storedInk > 0) {
                 player.setVelocity(player.getVelocity().x, Math.max(0.0, player.getVelocity().y), player.getVelocity().z);
                 sound(player);
                 buf.writeBoolean(true);
-                ClientPlayNetworking.send(id("propel"), buf);
+                ClientPlayNetworking.send(saId("propel"), buf);
             }
         }
     }
+
     private static void sound(PlayerEntity player) {
         if (CONFIG.soundsEnabled) {
             player.playSound(SoundEvents.BLOCK_AMETHYST_BLOCK_CHIME, SoundCategory.PLAYERS, 0.2f, 1.0f);

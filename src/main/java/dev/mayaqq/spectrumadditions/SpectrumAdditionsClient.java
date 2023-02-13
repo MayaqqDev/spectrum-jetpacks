@@ -13,7 +13,7 @@ import net.minecraft.client.option.StickyKeyBinding;
 import net.minecraft.text.Text;
 import org.lwjgl.glfw.GLFW;
 
-import static dev.mayaqq.spectrumadditions.SpectrumAdditions.GEMSTONE_JETPACK;
+import static dev.mayaqq.spectrumadditions.registries.SpectrumAdditionsItems.GEMSTONE_JETPACK;
 
 public class SpectrumAdditionsClient implements ClientModInitializer {
     public static KeyBinding toggleKey;
@@ -22,18 +22,8 @@ public class SpectrumAdditionsClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         TrinketRendererRegistry.registerRenderer(GEMSTONE_JETPACK, new TrinketJetpackRenderer());
-        toggleKey = KeyBindingHelper.registerKeyBinding(new StickyKeyBinding(
-                "key.spectrumadditions.toggle",
-                GLFW.GLFW_KEY_DELETE,
-                "category.spectrumadditions",
-                () -> true
-        ));
-        hoverKey = KeyBindingHelper.registerKeyBinding(new StickyKeyBinding(
-                "key.spectrumadditions.hover",
-                GLFW.GLFW_KEY_INSERT,
-                "category.spectrumadditions",
-                () -> true
-        ));
+        toggleKey = KeyBindingHelper.registerKeyBinding(new StickyKeyBinding("key.spectrumadditions.toggle", GLFW.GLFW_KEY_DELETE, "category.spectrumadditions", () -> true));
+        hoverKey = KeyBindingHelper.registerKeyBinding(new StickyKeyBinding("key.spectrumadditions.hover", GLFW.GLFW_KEY_INSERT, "category.spectrumadditions", () -> true));
 
         HudRenderCallback.EVENT.register((matrices, tickDelta) -> {
             long energyNum = EquipUtils.getEnergy(EquipUtils.getJetpack(MinecraftClient.getInstance().player));

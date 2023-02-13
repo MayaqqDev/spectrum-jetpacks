@@ -11,13 +11,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ServerPlayNetworkHandler.class)
 public abstract class ServerPlayNetworkHandlerMixin {
-    @Shadow private boolean floating;
-
-    @Shadow public ServerPlayerEntity player;
+    @Shadow
+    public ServerPlayerEntity player;
+    @Shadow
+    private boolean floating;
 
     @Inject(method = "onPlayerMove", at = @At("TAIL"))
     private void onPlayerMove(CallbackInfo ci) {
-        if (((PlayerExtensionsForTheJetPackMod)player).hasRecentlyUsedJetPack()) {
+        if (((PlayerExtensionsForTheJetPackMod) player).hasRecentlyUsedJetPack()) {
             this.floating = false;
         }
     }

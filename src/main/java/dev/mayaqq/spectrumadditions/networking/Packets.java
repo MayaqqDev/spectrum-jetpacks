@@ -9,11 +9,11 @@ import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.item.ItemStack;
 
 import static dev.mayaqq.spectrumadditions.SpectrumAdditions.CONFIG;
-import static dev.mayaqq.spectrumadditions.SpectrumAdditions.id;
+import static dev.mayaqq.spectrumadditions.SpectrumAdditions.saId;
 
 public class Packets {
     public static void register() {
-        ServerPlayNetworking.registerGlobalReceiver(id("propel"), (server, player, handler, buf, responseSender) -> {
+        ServerPlayNetworking.registerGlobalReceiver(saId("propel"), (server, player, handler, buf, responseSender) -> {
             boolean hover = buf.readBoolean();
             server.execute(() -> {
                 //particles, sounds, and energy drain
@@ -24,7 +24,7 @@ public class Packets {
                 } else {
                     inkStorage.drainEnergy(inkStorage.getStoredColor(), CONFIG.inkUsagePerTick);
                 }
-                ((JetpackItem)jetpack.getItem()).setEnergyStorage(jetpack, inkStorage);
+                ((JetpackItem) jetpack.getItem()).setEnergyStorage(jetpack, inkStorage);
                 ((PlayerExtensionsForTheJetPackMod) player).setHasRecentlyUsedJetPack(true);
                 //TODO: This sometimes breaks and looks a bit offset, fix it!
                 float yawRadians = (float) Math.toRadians(-player.bodyYaw + 90);

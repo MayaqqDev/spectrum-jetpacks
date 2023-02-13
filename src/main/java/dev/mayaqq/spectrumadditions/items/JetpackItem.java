@@ -26,7 +26,7 @@ public class JetpackItem extends SpectrumTrinketItem implements InkStorageItem<F
     public final InkColor inkColor;
     public final long maxInk;
 
-    public JetpackItem(Settings settings, Identifier identifier ,InkColor inkColor, long maxInk) {
+    public JetpackItem(Settings settings, Identifier identifier, InkColor inkColor, long maxInk) {
         super(settings.maxCount(1), identifier);
         this.inkColor = inkColor;
         this.maxInk = maxInk;
@@ -42,6 +42,7 @@ public class JetpackItem extends SpectrumTrinketItem implements InkStorageItem<F
         tooltip.add(Text.translatable("item.spectrumadditions.jetpack.desc.hover", hoverKey.getBoundKeyLocalizedText().getString().toUpperCase()).formatted(Formatting.GRAY));
         tooltip.add(Text.of(" "));
     }
+
     @Override
     public boolean canEquip(ItemStack stack, SlotReference slot, LivingEntity entity) {
         return true;

@@ -2,7 +2,6 @@
   "schemaVersion": 1,
   "id": "spectrumadditions",
   "version": "${version}",
-
   "name": "Spectrum Additions",
   "description": "An addon for the Spectrum mod that adds lots of utilities and features that wouldn't fit in the main mod.",
   "authors": [
@@ -12,10 +11,8 @@
     "homepage": "https://mayaqq.dev",
     "sources": "https://github.com/MayaqqDev/Spectrum-Additions"
   },
-
   "license": "LGPL-3",
   "icon": "assets/spectrumadditions/icon.png",
-
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -31,7 +28,6 @@
   "mixins": [
     "spectrumadditions.mixins.json"
   ],
-
   "depends": {
     "fabricloader": ">=0.14.10",
     "fabric-api": "*",
