@@ -1,6 +1,5 @@
 package dev.mayaqq.spectrumJetpacks;
 
-import de.dafuqs.spectrum.config.SpectrumConfig;
 import de.dafuqs.spectrum.energy.color.InkColor;
 
 import de.dafuqs.spectrum.registries.SpectrumItemGroups;
@@ -28,6 +27,7 @@ public class SpectrumJetpacks implements ModInitializer {
 
 	//register items
 	public static final JetpackItem GEMSTONE_JETPACK = Registry.register(Registry.ITEM, id("gemstone_jetpack"), new JetpackItem(settings, id("gemstone_jetpack"), InkColor.of(DyeColor.PURPLE), 5000));
+	public static final JetpackItem BEDROCK_JETPACK = Registry.register(Registry.ITEM, id("bedrock_jetpack"), new JetpackItem(settings, id("bedrock_jetpack"), InkColor.of(DyeColor.PURPLE), 10000));
 
 	@Override
 	public void onInitialize() {

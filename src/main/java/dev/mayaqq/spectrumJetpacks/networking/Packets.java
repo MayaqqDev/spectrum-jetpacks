@@ -4,7 +4,7 @@ import de.dafuqs.spectrum.energy.storage.FixedSingleInkStorage;
 import de.dafuqs.spectrum.particle.SpectrumParticleTypes;
 import dev.mayaqq.spectrumJetpacks.items.JetpackItem;
 import dev.mayaqq.spectrumJetpacks.utils.EquipUtils;
-import dev.mayaqq.spectrumJetpacks.utils.PlayerExtensionsForTheJetPackMod;
+import dev.mayaqq.spectrumJetpacks.utils.JetpackPlayerExtension;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.item.ItemStack;
 
@@ -25,7 +25,7 @@ public class Packets {
                     inkStorage.drainEnergy(inkStorage.getStoredColor(), CONFIG.inkUsagePerTick);
                 }
                 ((JetpackItem)jetpack.getItem()).setEnergyStorage(jetpack, inkStorage);
-                ((PlayerExtensionsForTheJetPackMod) player).setHasRecentlyUsedJetPack(true);
+                ((JetpackPlayerExtension) player).setHasRecentlyUsedJetPack(true);
                 //TODO: This sometimes breaks and looks a bit offset, fix it!
                 float yawRadians = (float) Math.toRadians(-player.bodyYaw + 90);
                 float xOff = 0.5f * (float) Math.cos(yawRadians);

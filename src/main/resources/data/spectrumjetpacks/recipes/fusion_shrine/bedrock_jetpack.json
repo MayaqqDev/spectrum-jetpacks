@@ -1,0 +1,40 @@
+{
+  "type": "spectrum:fusion_shrine",
+  "time": 1200,
+  "experience": 16.0,
+  "fluid": "spectrum:midnight_solution",
+  "copy_nbt": true,
+  "ingredients": [
+    {
+      "item": "spectrumjetpacks:gemstone_jetpack"
+    },
+    {
+      "item": "spectrum:bedrock_dust",
+      "count": 6
+    },
+    {
+      "item": "spectrum:black_pigment",
+      "count": 6
+    },
+    {
+      "item": "spectrum:onyx_powder",
+      "count": 6
+    },
+    {
+      "item": "spectrum:stratine_fragments",
+      "count": 3
+    },
+    {
+      "item": "minecraft:gold_ingot",
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "spectrumjetpacks:bedrock_jetpack"
+  },
+  "required_advancement": "spectrum:midgame/break_decayed_bedrock",
+  "world_conditions": [],
+  "start_crafting_effect": "nothing",
+  "during_crafting_effects": [],
+  "finish_crafting_effect": "single_visual_explosion_on_shrine"
+}

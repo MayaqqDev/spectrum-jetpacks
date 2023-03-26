@@ -1,6 +1,6 @@
 package dev.mayaqq.spectrumJetpacks.mixin;
 
-import dev.mayaqq.spectrumJetpacks.utils.PlayerExtensionsForTheJetPackMod;
+import dev.mayaqq.spectrumJetpacks.utils.JetpackPlayerExtension;
 import net.minecraft.server.network.ServerPlayNetworkHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
@@ -17,7 +17,7 @@ public abstract class ServerPlayNetworkHandlerMixin {
 
     @Inject(method = "onPlayerMove", at = @At("TAIL"))
     private void onPlayerMove(CallbackInfo ci) {
-        if (((PlayerExtensionsForTheJetPackMod)player).hasRecentlyUsedJetPack()) {
+        if (((JetpackPlayerExtension)player).hasRecentlyUsedJetPack()) {
             this.floating = false;
         }
     }

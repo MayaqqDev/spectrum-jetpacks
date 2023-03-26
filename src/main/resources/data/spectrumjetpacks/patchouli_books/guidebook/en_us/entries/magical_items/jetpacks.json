@@ -5,7 +5,8 @@
   "icon": "spectrumjetpacks:gemstone_jetpack",
   "category": "spectrum:magic_category",
   "extra_recipe_mappings": {
-    "spectrumjetpacks:gemstone_jetpack": 0
+    "spectrumjetpacks:gemstone_jetpack": 0,
+    "spectrumjetpacks:bedrock_jetpack": 0
   },
   "pages": [
     {
@@ -14,9 +15,14 @@
     },
     {
       "type": "spectrum:pedestal_crafting",
-      "title": "Pedestal Recipe",
       "recipe": "spectrumjetpacks:pedestal/jetpacks/gemstone_jetpack",
       "text": "The first in a series of jetpacks, the Gemstone Jetpack is the most basic of the bunch. It is crafted using a variety of materials, including fire charge for ignition, and is the perfect way to get started with your new invention. Do not forget to charge it up before takeoff!"
+    },
+    {
+      "type": "spectrum:fusion_shrine_crafting",
+      "advancement": "spectrum:midgame/break_decayed_bedrock",
+      "recipe": "spectrumjetpacks:fusion_shrine/bedrock_jetpack",
+      "text": "After discovering the power of bedrock and all the tools and gear you can make, you realize you could use it to make a jetpack that is even more powerful than the Gemstone Jetpack. It is the yet most powerful jetpack you can make, and will allow you to soar to new heights."
     }
   ]
 }

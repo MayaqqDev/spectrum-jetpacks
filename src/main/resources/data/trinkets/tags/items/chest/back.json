@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "spectrumjetpacks:gemstone_jetpack"
+    "spectrumjetpacks:gemstone_jetpack",
+    "spectrumjetpacks:bedrock_jetpack"
   ]
 }

@@ -14,15 +14,20 @@ import net.minecraft.util.Pair;
 
 import java.util.Optional;
 
+import static dev.mayaqq.spectrumJetpacks.SpectrumJetpacks.BEDROCK_JETPACK;
 import static dev.mayaqq.spectrumJetpacks.SpectrumJetpacks.GEMSTONE_JETPACK;
 
 public class EquipUtils {
     public static int hasJetpack(PlayerEntity player) {
         // 0 = no jetpack
         // 1 = gemstone jetpack
+        // 2 = bedrock jetpack
         // more
         if (TrinketsApi.getTrinketComponent(player).get().isEquipped(GEMSTONE_JETPACK)) {
             return 1;
+        }
+        if (TrinketsApi.getTrinketComponent(player).get().isEquipped(BEDROCK_JETPACK)) {
+            return 2;
         }
         return 0;
     }

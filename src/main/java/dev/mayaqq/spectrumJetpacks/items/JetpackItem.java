@@ -5,7 +5,7 @@ import de.dafuqs.spectrum.energy.color.InkColor;
 import de.dafuqs.spectrum.energy.storage.FixedSingleInkStorage;
 import de.dafuqs.spectrum.items.trinkets.SpectrumTrinketItem;
 import dev.emi.trinkets.api.SlotReference;
-import dev.mayaqq.spectrumJetpacks.utils.PlayerExtensionsForTheJetPackMod;
+import dev.mayaqq.spectrumJetpacks.utils.JetpackPlayerExtension;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
@@ -18,8 +18,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-import static dev.mayaqq.spectrumJetpacks.SpectrumJetpacksClient.hoverKey;
-import static dev.mayaqq.spectrumJetpacks.SpectrumJetpacksClient.toggleKey;
+import static dev.mayaqq.spectrumJetpacks.registry.KeybindRegistry.hoverKey;
+import static dev.mayaqq.spectrumJetpacks.registry.KeybindRegistry.toggleKey;
 
 public class JetpackItem extends SpectrumTrinketItem implements InkStorageItem<FixedSingleInkStorage> {
 
@@ -50,7 +50,7 @@ public class JetpackItem extends SpectrumTrinketItem implements InkStorageItem<F
     @Override
     public void onUnequip(ItemStack stack, SlotReference slot, LivingEntity entity) {
         super.onUnequip(stack, slot, entity);
-        ((PlayerExtensionsForTheJetPackMod) entity).setHasRecentlyUsedJetPack(false);
+        ((JetpackPlayerExtension) entity).setHasRecentlyUsedJetPack(false);
     }
 
     @Override

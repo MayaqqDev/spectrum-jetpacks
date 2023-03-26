@@ -14,9 +14,8 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 
 import static dev.mayaqq.spectrumJetpacks.SpectrumJetpacks.CONFIG;
-import static dev.mayaqq.spectrumJetpacks.SpectrumJetpacksClient.hoverKey;
-import static dev.mayaqq.spectrumJetpacks.SpectrumJetpacksClient.toggleKey;
-
+import static dev.mayaqq.spectrumJetpacks.registry.KeybindRegistry.hoverKey;
+import static dev.mayaqq.spectrumJetpacks.registry.KeybindRegistry.toggleKey;
 
 
 public class JetpackPropel {
@@ -27,6 +26,8 @@ public class JetpackPropel {
             float propelSpeed = 0.1f;
             if (EquipUtils.hasJetpack(player) == 1) {
                 propelMax = 0.3f;
+        } else if (EquipUtils.hasJetpack(player) == 2) {
+                propelMax = 0.5f;
             }
             ItemStack jetpack = EquipUtils.getJetpack(player);
             FixedSingleInkStorage inkStorage = EquipUtils.getEnergyStorage(jetpack);

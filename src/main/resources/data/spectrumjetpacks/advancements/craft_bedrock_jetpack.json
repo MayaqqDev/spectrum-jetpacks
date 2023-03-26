@@ -1,0 +1,24 @@
+{
+  "display": {
+    "icon": {
+      "item": "spectrumjetpacks:bedrock_jetpack"
+    },
+    "title": {
+      "translate": "advancements.spectrumjetpacks.craft_bedrock_jetpack.title"
+    },
+    "description": {
+      "translate": "advancements.spectrumjetpacks.craft_bedrock_jetpack.description"
+    }
+  },
+  "parent": "spectrum:midgame/break_decayed_bedrock",
+  "criteria": {
+    "craft": {
+      "trigger":"spectrum:crafted_with_fusion_shrine",
+      "conditions": { "items": [{ "items": [ "spectrumjetpacks:bedrock_jetpack" ]}] }
+    },
+    "gotten_previous": {
+      "trigger":"revelationary:advancement_gotten",
+      "conditions": { "advancement_identifier": "spectrum:midgame/break_decayed_bedrock" }
+    }
+  }
+}

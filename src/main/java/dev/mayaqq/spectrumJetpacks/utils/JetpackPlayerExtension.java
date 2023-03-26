@@ -1,6 +1,6 @@
 package dev.mayaqq.spectrumJetpacks.utils;
 
-public interface PlayerExtensionsForTheJetPackMod {
+public interface JetpackPlayerExtension {
     boolean hasRecentlyUsedJetPack();
 
     void setHasRecentlyUsedJetPack(boolean newValue);
