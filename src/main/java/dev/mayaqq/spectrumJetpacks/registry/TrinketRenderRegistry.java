@@ -3,8 +3,8 @@ package dev.mayaqq.spectrumJetpacks.registry;
 import dev.emi.trinkets.api.client.TrinketRendererRegistry;
 import dev.mayaqq.spectrumJetpacks.utils.TrinketJetpackRenderer;
 
-import static dev.mayaqq.spectrumJetpacks.SpectrumJetpacks.BEDROCK_JETPACK;
-import static dev.mayaqq.spectrumJetpacks.SpectrumJetpacks.GEMSTONE_JETPACK;
+import static dev.mayaqq.spectrumJetpacks.registry.ItemRegistry.BEDROCK_JETPACK;
+import static dev.mayaqq.spectrumJetpacks.registry.ItemRegistry.GEMSTONE_JETPACK;
 
 public class TrinketRenderRegistry {
     public static void register() {

@@ -14,8 +14,8 @@ import net.minecraft.util.Pair;
 
 import java.util.Optional;
 
-import static dev.mayaqq.spectrumJetpacks.SpectrumJetpacks.BEDROCK_JETPACK;
-import static dev.mayaqq.spectrumJetpacks.SpectrumJetpacks.GEMSTONE_JETPACK;
+import static dev.mayaqq.spectrumJetpacks.registry.ItemRegistry.BEDROCK_JETPACK;
+import static dev.mayaqq.spectrumJetpacks.registry.ItemRegistry.GEMSTONE_JETPACK;
 
 public class EquipUtils {
     public static int hasJetpack(PlayerEntity player) {

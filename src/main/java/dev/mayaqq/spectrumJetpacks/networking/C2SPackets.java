@@ -11,7 +11,7 @@ import net.minecraft.item.ItemStack;
 import static dev.mayaqq.spectrumJetpacks.SpectrumJetpacks.CONFIG;
 import static dev.mayaqq.spectrumJetpacks.SpectrumJetpacks.id;
 
-public class Packets {
+public class C2SPackets {
     public static void register() {
         ServerPlayNetworking.registerGlobalReceiver(id("propel"), (server, player, handler, buf, responseSender) -> {
             boolean hover = buf.readBoolean();
