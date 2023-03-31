@@ -10,7 +10,7 @@ import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.text.Text;
+import net.minecraft.text.*;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
@@ -36,12 +36,13 @@ public class JetpackItem extends SpectrumTrinketItem implements InkStorageItem<F
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         FixedSingleInkStorage inkStorage = getEnergyStorage(stack);
         long storedInk = inkStorage.getEnergy(inkStorage.getStoredColor());
-        tooltip.add(Text.literal("Stored Ink: " + storedInk).formatted(Formatting.GRAY));
+        tooltip.add(new LiteralText("Stored Purple Ink: " + storedInk).formatted(Formatting.GRAY));
         tooltip.add(Text.of(" "));
-        tooltip.add(Text.translatable("item.spectrumjetpacks.jetpack.desc.toggle", toggleKey.getBoundKeyLocalizedText().getString().toUpperCase()).formatted(Formatting.GRAY));
-        tooltip.add(Text.translatable("item.spectrumjetpacks.jetpack.desc.hover", hoverKey.getBoundKeyLocalizedText().getString().toUpperCase()).formatted(Formatting.GRAY));
+        tooltip.add(new TranslatableText("item.spectrumjetpacks.jetpack.desc.toggle", toggleKey.getBoundKeyLocalizedText().getString().toUpperCase()).formatted(Formatting.GRAY));
+        tooltip.add(new TranslatableText("item.spectrumjetpacks.jetpack.desc.hover", hoverKey.getBoundKeyLocalizedText().getString().toUpperCase()).formatted(Formatting.GRAY));
         tooltip.add(Text.of(" "));
     }
+    
     @Override
     public boolean canEquip(ItemStack stack, SlotReference slot, LivingEntity entity) {
         return true;
@@ -67,6 +68,6 @@ public class JetpackItem extends SpectrumTrinketItem implements InkStorageItem<F
 
     @Override
     public Drainability getDrainability() {
-        return Drainability.PLAYER_ONLY;
+        return Drainability.NEVER;
     }
 }
