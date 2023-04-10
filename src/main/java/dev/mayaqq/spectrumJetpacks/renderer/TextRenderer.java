@@ -27,16 +27,13 @@ public class TextRenderer {
             Text energyText = Text.of("Stored Ink: " + energyString);
             String toggleString = toggleKey.isPressed() ? "§aON" : "§cOFF";
             String hoverString = hoverKey.isPressed() ? "§aON" : "§cOFF";
-            String boostString = boostKey.isPressed() ? "§aON" : "§cOFF";
             Text toggleText = Text.of("Toggled: " + toggleString);
             Text hoverText = Text.of("Hovering: " + hoverString);
-            Text boostText = Text.of("Boosting: " + boostString);
             net.minecraft.client.font.TextRenderer textRenderer = MinecraftClient.getInstance().textRenderer;
             int width = textRenderer.getWidth(energyText);
             textRenderer.drawWithShadow(matrices, energyText, 45 - width / 2f, 100, 0xFFFFFF);
             textRenderer.drawWithShadow(matrices, toggleText, 45 - width / 2f, 110, 0xFFFFFF);
             textRenderer.drawWithShadow(matrices, hoverText, 45 - width / 2f, 120, 0xFFFFFF);
-            textRenderer.drawWithShadow(matrices, boostText, 45 - width / 2f, 130, 0xFFFFFF);
         }
     }
 }

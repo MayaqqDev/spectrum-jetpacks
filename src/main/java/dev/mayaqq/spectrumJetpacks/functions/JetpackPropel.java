@@ -38,7 +38,7 @@ public class JetpackPropel {
 
         if (toggleKey.isPressed()) {;
             // vertical motion
-            if (player.isOnGround() || storedInk <= 0) {
+            if (player.isOnGround() || (storedInk <= 0 && !player.isCreative())) {
                 return;
             } else if (mc.options.jumpKey.isPressed()) {
                 v = new Vec3d(v.x, Math.min(maxVerticalVelocity, v.y + verticalSpeed), v.z);
@@ -54,7 +54,7 @@ public class JetpackPropel {
                 ClientPlayNetworking.send(new Identifier("spectrumjetpacks", "propel"), buf);
             }
             // horizontal motion
-            if (player.forwardSpeed > 0.0F && boostKey.isPressed()) {
+            if (player.forwardSpeed > 0.0F && player.isSprinting()) {
                 float yaw = player.getYaw(1.0f);
                 float pitch = player.getPitch(1.0f);
                 double xDir = -Math.sin(Math.toRadians(yaw)) * Math.cos(Math.toRadians(pitch));
