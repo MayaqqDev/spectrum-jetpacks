@@ -10,20 +10,24 @@ import net.minecraft.item.ItemStack;
 
 import static dev.mayaqq.spectrumJetpacks.SpectrumJetpacks.CONFIG;
 import static dev.mayaqq.spectrumJetpacks.SpectrumJetpacks.id;
+import static dev.mayaqq.spectrumJetpacks.registry.ServerEventRegistry.tick;
 
 public class C2SPackets {
     public static void register() {
         ServerPlayNetworking.registerGlobalReceiver(id("propel"), (server, player, handler, buf, responseSender) -> {
-            boolean hover = buf.readBoolean();
+            boolean goingUp = buf.readBoolean();
             server.execute(() -> {
                 //particles, sounds, and energy drain
                 ItemStack jetpack = EquipUtils.getJetpack(player);
                 FixedSingleInkStorage inkStorage = EquipUtils.getEnergyStorage(jetpack);
-                if (hover) {
-                    inkStorage.drainEnergy(inkStorage.getStoredColor(), CONFIG.inkUsagePerTickHovering);
-                } else {
-                    inkStorage.drainEnergy(inkStorage.getStoredColor(), CONFIG.inkUsagePerTick);
+                if (tick) {
+                    if (goingUp) {
+                        inkStorage.drainEnergy(inkStorage.getStoredColor(), CONFIG.inkUsagePerTickGoingUp);
+                    } else {
+                        inkStorage.drainEnergy(inkStorage.getStoredColor(), CONFIG.inkUsagePerTick);
+                    }
                 }
+                player.forwardSpeed = 10f;
                 ((JetpackItem)jetpack.getItem()).setEnergyStorage(jetpack, inkStorage);
                 ((JetpackPlayerExtension) player).setHasRecentlyUsedJetPack(true);
                 //TODO: This sometimes breaks and looks a bit offset, fix it!

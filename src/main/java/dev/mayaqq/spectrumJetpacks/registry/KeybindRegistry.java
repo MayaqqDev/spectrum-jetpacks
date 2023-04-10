@@ -8,6 +8,7 @@ import org.lwjgl.glfw.GLFW;
 public class KeybindRegistry {
     public static KeyBinding toggleKey;
     public static KeyBinding hoverKey;
+    public static KeyBinding boostKey;
 
     public static void register() {
         toggleKey = KeyBindingHelper.registerKeyBinding(new StickyKeyBinding(
@@ -19,6 +20,12 @@ public class KeybindRegistry {
         hoverKey = KeyBindingHelper.registerKeyBinding(new StickyKeyBinding(
                 "key.spectrumjetpacks.hover",
                 GLFW.GLFW_KEY_INSERT,
+                "category.spectrumjetpacks",
+                () -> true
+        ));
+        boostKey = KeyBindingHelper.registerKeyBinding(new StickyKeyBinding(
+                "key.spectrumjetpacks.boost",
+                GLFW.GLFW_KEY_HOME,
                 "category.spectrumjetpacks",
                 () -> true
         ));

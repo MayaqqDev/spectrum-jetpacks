@@ -4,10 +4,12 @@
 
   "item.spectrumjetpacks.jetpack.desc.toggle": "Toggle: [%s]",
     "item.spectrumjetpacks.jetpack.desc.hover": "Hover: [%s]",
+    "item.spectrumjetpacks.jetpack.desc.boost": "Boost: [%s]",
 
   "category.spectrumjetpacks": "Spectrum Jetpacks",
   "key.spectrumjetpacks.toggle": "Toggle Jetpack Propel",
   "key.spectrumjetpacks.hover": "Toggle Jetpack Hover",
+  "key.spectrumjetpacks.boost": "Jetpack Boost",
 
 
   "text.autoconfig.spectrumjetpacks.title": "Spectrum Jetpacks",

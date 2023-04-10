@@ -25,11 +25,32 @@ public class JetpackItem extends SpectrumTrinketItem implements InkStorageItem<F
 
     public final InkColor inkColor;
     public final long maxInk;
+    public final float maxVerticalVelocity;
+    public final float maxHorizontalVelocity;
+    public final float horizontalSpeed;
+    public final float verticalSpeed;
 
-    public JetpackItem(Settings settings, Identifier identifier ,InkColor inkColor, long maxInk) {
+    public JetpackItem(Settings settings, Identifier identifier ,InkColor inkColor, long maxInk, float horizontalSpeed, float verticalSpeed, float maxHorizontalVelocity, float maxVerticalVelocity) {
         super(settings.maxCount(1), identifier);
         this.inkColor = inkColor;
         this.maxInk = maxInk;
+        this.horizontalSpeed = horizontalSpeed;
+        this.verticalSpeed = verticalSpeed;
+        this.maxVerticalVelocity = maxVerticalVelocity;
+        this.maxHorizontalVelocity = maxHorizontalVelocity;
+    }
+
+    public float getHorizontalSpeed() {
+        return this.horizontalSpeed;
+    }
+    public float getVerticalSpeed() {
+        return this.verticalSpeed;
+    }
+    public float getMaxHorizontalVelocity() {
+        return this.maxHorizontalVelocity;
+    }
+    public float getMaxVerticalVelocity() {
+        return this.maxVerticalVelocity;
     }
 
     @Override

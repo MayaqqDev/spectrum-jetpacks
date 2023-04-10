@@ -3,6 +3,7 @@ package dev.mayaqq.spectrumJetpacks;
 import dev.mayaqq.spectrumJetpacks.config.SpectrumJetpacksConfig;
 import dev.mayaqq.spectrumJetpacks.networking.C2SPackets;
 import dev.mayaqq.spectrumJetpacks.registry.ItemRegistry;
+import dev.mayaqq.spectrumJetpacks.registry.ServerEventRegistry;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
@@ -22,9 +23,10 @@ public class SpectrumJetpacks implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		LOGGER.info("To the sky!");
-		ItemRegistry.register();
-		C2SPackets.register();
 		AutoConfig.register(SpectrumJetpacksConfig.class, JanksonConfigSerializer::new);
 		CONFIG = AutoConfig.getConfigHolder(SpectrumJetpacksConfig.class).getConfig();
+		ItemRegistry.register();
+		C2SPackets.register();
+		ServerEventRegistry.register();
 	}
 }
