@@ -1,4 +1,4 @@
-package dev.mayaqq.spectrumJetpacks.utils;
+package dev.mayaqq.spectrumJetpacks.renderer;
 
 import dev.emi.trinkets.api.SlotReference;
 import dev.emi.trinkets.api.client.TrinketRenderer;
@@ -29,6 +29,7 @@ public class TrinketJetpackRenderer implements TrinketRenderer {
         }
 
         MinecraftClient.getInstance().getItemRenderer().renderItem(stack, ModelTransformation.Mode.FIXED, light, OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, 0);
+        // spawn particles
         matrices.pop();
     }
 }

@@ -67,6 +67,7 @@ repositories {
 		name = "Curse"
 		url = 'https://cfa2.cursemaven.com'
 	}
+	maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
 	mavenCentral()
 }
 
@@ -95,6 +96,7 @@ dependencies {
 	modImplementation "vazkii.patchouli:Patchouli:${project.patchouli_version}"
 	modImplementation "io.wispforest:owo-lib:${project.owo_version}"
 	modImplementation "maven.modrinth:spectrum:${project.spectrum_version}"
+	modImplementation "software.bernie.geckolib:geckolib-fabric-${project.geckolib_version}"
 
 	// Actual other dependencies
 	modImplementation "maven.modrinth:trinkets:${project.trinkets_version}"

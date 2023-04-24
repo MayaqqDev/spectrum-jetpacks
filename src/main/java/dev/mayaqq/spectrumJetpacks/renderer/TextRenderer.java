@@ -14,7 +14,7 @@ public class TextRenderer {
         MinecraftClient mc = MinecraftClient.getInstance();
         ClientPlayerEntity player = mc.player;
         long energyNum = EquipUtils.getEnergy(EquipUtils.getJetpack(player));
-        if (EquipUtils.hasJetpack(player) > 0) {
+        if (EquipUtils.jetpackNumber(player) > 0) {
             long energyPercent = energyNum / (((JetpackItem) EquipUtils.getJetpack(player).getItem()).maxInk / 100);
             String energyString = energyPercent + "%";
             if (energyPercent >= 50) {

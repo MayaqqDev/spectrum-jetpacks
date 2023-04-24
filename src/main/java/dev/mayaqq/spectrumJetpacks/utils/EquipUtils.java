@@ -18,7 +18,7 @@ import static dev.mayaqq.spectrumJetpacks.registry.ItemRegistry.BEDROCK_JETPACK;
 import static dev.mayaqq.spectrumJetpacks.registry.ItemRegistry.GEMSTONE_JETPACK;
 
 public class EquipUtils {
-    public static int hasJetpack(PlayerEntity player) {
+    public static int jetpackNumber(PlayerEntity player) {
         // 0 = no jetpack
         // 1 = gemstone jetpack
         // 2 = bedrock jetpack
@@ -30,6 +30,9 @@ public class EquipUtils {
             return 2;
         }
         return 0;
+    }
+    public static boolean hasJetpack(PlayerEntity player) {
+        return jetpackNumber(player) > 0;
     }
     public static ItemStack getJetpack(PlayerEntity player) {
         Optional<TrinketComponent> component = TrinketsApi.getTrinketComponent(player);

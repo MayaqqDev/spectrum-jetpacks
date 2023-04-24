@@ -13,7 +13,7 @@ public abstract class PlayerEntityMixin {
     @Inject(method = "tick", at = @At("TAIL"))
     public void jetpackTick(CallbackInfo ci) {
         PlayerEntity player = ((PlayerEntity) (Object) this);
-        if (EquipUtils.hasJetpack(player) > 0) {
+        if (EquipUtils.hasJetpack(player)) {
             JetpackPropel.propel(player);
         }
     }
