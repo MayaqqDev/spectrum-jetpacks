@@ -45,15 +45,15 @@ public class JetpackPropel {
                 return;
             } else if (mc.options.jumpKey.isPressed()) {
                 v = new Vec3d(v.x, Math.min(maxVerticalVelocity, v.y + verticalSpeed), v.z);
-                buf.writeBoolean(true);
+                buf.writeInt(0);
                 ClientPlayNetworking.send(id("propel"), buf);
             } else if (player.isSneaking()) {
                 v = new Vec3d(v.x, Math.max(-maxVerticalVelocity, v.y - verticalSpeed), v.z);
-                buf.writeBoolean(false);
+                buf.writeInt(0);
                 ClientPlayNetworking.send(id("propel"), buf);
             } else if (hoverKey.isPressed()) {
                 v = new Vec3d(v.x, Math.max(-0.01f, v.y), v.z);
-                buf.writeBoolean(false);
+                buf.writeInt(1);
                 ClientPlayNetworking.send(id("propel"), buf);
             }
             // horizontal motion
@@ -71,6 +71,8 @@ public class JetpackPropel {
                 double keepY = v.y;
                 v = new Vec3d(newVelocity.x, keepY, newVelocity.z).normalize().multiply(maxSpeed);
                 v = new Vec3d(v.x, keepY, v.z);
+                buf.writeInt(2);
+                ClientPlayNetworking.send(id("propel"), buf);
             }
             sound(player);
             double xOffset = 0.2; // adjust this value as needed

@@ -12,6 +12,7 @@ public class SpectrumJetpacksConfig implements ConfigData {
     public int energyDrainTickFrequency = 2;
     public int inkUsagePerTick = 1;
     public int inkUsagePerTickGoingUp = 2;
+    public int inkUsagePerTickForward = 1;
     public int gemstoneJetpackMaxFuel = 5000;
     public float gemstoneJetpackMaxVerticalVelocity = 0.3f;
     public float gemstoneJetpackMaxHorizontalVelocity = 1.5f;

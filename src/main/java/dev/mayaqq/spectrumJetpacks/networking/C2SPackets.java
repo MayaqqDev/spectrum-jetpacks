@@ -1,5 +1,6 @@
 package dev.mayaqq.spectrumJetpacks.networking;
 
+import de.dafuqs.spectrum.energy.color.InkColor;
 import de.dafuqs.spectrum.energy.storage.FixedSingleInkStorage;
 import de.dafuqs.spectrum.particle.SpectrumParticleTypes;
 import dev.mayaqq.spectrumJetpacks.items.JetpackItem;
@@ -24,17 +25,18 @@ public class C2SPackets {
 
     public static void register() {
         ServerPlayNetworking.registerGlobalReceiver(id("propel"), (server, player, handler, buf, responseSender) -> {
-            boolean goingUp = buf.readBoolean();
+            int working = buf.readInt();
             server.execute(() -> {
                 //particles, sounds, and energy drain
                 ItemStack jetpack = EquipUtils.getJetpack(player);
                 FixedSingleInkStorage inkStorage = EquipUtils.getEnergyStorage(jetpack);
+                InkColor color = inkStorage.getStoredColor();
                 propellingMap.put(player, true);
                 if (tick && !player.isCreative()) {
-                    if (goingUp) {
-                        inkStorage.drainEnergy(inkStorage.getStoredColor(), CONFIG.inkUsagePerTickGoingUp);
-                    } else {
-                        inkStorage.drainEnergy(inkStorage.getStoredColor(), CONFIG.inkUsagePerTick);
+                    switch (working) {
+                        case 0 -> inkStorage.drainEnergy(color, CONFIG.inkUsagePerTick);
+                        case 1 -> inkStorage.drainEnergy(color, CONFIG.inkUsagePerTickGoingUp);
+                        case 2 -> inkStorage.drainEnergy(color, CONFIG.inkUsagePerTickForward);
                     }
                 }
                 player.forwardSpeed = 10f;
