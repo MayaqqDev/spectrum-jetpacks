@@ -29,6 +29,9 @@ public class C2SPackets {
             server.execute(() -> {
                 //particles, sounds, and energy drain
                 ItemStack jetpack = EquipUtils.getJetpack(player);
+                if (jetpack == null) {
+                    return;
+                }
                 FixedSingleInkStorage inkStorage = EquipUtils.getEnergyStorage(jetpack);
                 InkColor color = inkStorage.getStoredColor();
                 propellingMap.put(player, true);

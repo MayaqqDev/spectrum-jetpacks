@@ -25,6 +25,9 @@ public class JetpackPropel {
 
     public static void propel(PlayerEntity player) {
         ItemStack jetpack = EquipUtils.getJetpack(player);
+        if (jetpack == null) {
+            return;
+        }
         JetpackItem jetpackItem = (JetpackItem) jetpack.getItem();
 
         float maxVerticalVelocity = jetpackItem.getMaxVerticalVelocity();

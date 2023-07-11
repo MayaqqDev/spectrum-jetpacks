@@ -34,6 +34,7 @@ public class EquipUtils {
     public static boolean hasJetpack(PlayerEntity player) {
         return jetpackNumber(player) > 0;
     }
+
     public static ItemStack getJetpack(PlayerEntity player) {
         Optional<TrinketComponent> component = TrinketsApi.getTrinketComponent(player);
         for (Pair<SlotReference, ItemStack> pair : component.get().getEquipped(item -> true)) {
@@ -41,7 +42,11 @@ public class EquipUtils {
             TrinketInventory inv = slot.inventory();
             if (inv.getSlotType().getName().equals("back")) {
                 ItemStack stack = pair.getRight();
-                return stack;
+                if (stack.getItem() instanceof JetpackItem) {
+                    return stack;
+                } else {
+                    return null;
+                }
             }
         }
         return null;
