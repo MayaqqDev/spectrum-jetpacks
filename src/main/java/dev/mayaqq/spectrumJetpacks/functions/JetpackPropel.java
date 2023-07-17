@@ -74,8 +74,9 @@ public class JetpackPropel {
                 double keepY = v.y;
                 v = new Vec3d(newVelocity.x, keepY, newVelocity.z).normalize().multiply(maxSpeed);
                 v = new Vec3d(v.x, keepY, v.z);
-                buf.writeInt(2);
-                ClientPlayNetworking.send(id("propel"), buf);
+                PacketByteBuf sprintBuf = PacketByteBufs.create();
+                sprintBuf.writeInt(2);
+                ClientPlayNetworking.send(id("propel"), sprintBuf);
             }
             sound(player);
             double xOffset = 0.2; // adjust this value as needed
