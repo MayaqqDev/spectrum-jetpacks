@@ -2,8 +2,10 @@ package dev.mayaqq.spectrumJetpacks.mixin;
 
 import dev.mayaqq.spectrumJetpacks.functions.JetpackPropel;
 import dev.mayaqq.spectrumJetpacks.utils.EquipUtils;
+import net.fabricmc.api.Environment;
 import net.minecraft.entity.player.PlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.gen.Accessor;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;

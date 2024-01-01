@@ -2,16 +2,11 @@ package dev.mayaqq.spectrumJetpacks.networking;
 
 import de.dafuqs.spectrum.energy.color.InkColor;
 import de.dafuqs.spectrum.energy.storage.FixedSingleInkStorage;
-import de.dafuqs.spectrum.particle.SpectrumParticleTypes;
 import dev.mayaqq.spectrumJetpacks.items.JetpackItem;
 import dev.mayaqq.spectrumJetpacks.utils.EquipUtils;
-import dev.mayaqq.spectrumJetpacks.utils.JetpackPlayerExtension;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.network.packet.s2c.play.ParticleS2CPacket;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.math.MathHelper;
 
 import java.util.HashMap;
 
@@ -44,7 +39,6 @@ public class C2SPackets {
                 }
                 player.forwardSpeed = 10f;
                 ((JetpackItem)jetpack.getItem()).setEnergyStorage(jetpack, inkStorage);
-                ((JetpackPlayerExtension) player).setHasRecentlyUsedJetPack(true);
             });
         });
         ServerPlayNetworking.registerGlobalReceiver(id("stoppropel"), (server, player, handler, buf, responseSender) -> {

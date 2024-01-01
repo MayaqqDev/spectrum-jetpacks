@@ -3,14 +3,12 @@
   "package": "dev.mayaqq.spectrumJetpacks.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "ServerPlayerEntityMixin"
+    "ServerPlayNetworkHandlerMixin"
   ],
   "client": [
     "PlayerEntityMixin"
   ],
-  "server": [
-    "ServerPlayNetworkHandlerMixin"
-  ],
+  "server": [],
   "injectors": {
     "defaultRequire": 1
   }

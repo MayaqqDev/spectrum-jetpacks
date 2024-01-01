@@ -2,8 +2,6 @@ package dev.mayaqq.spectrumJetpacks;
 
 import dev.mayaqq.spectrumJetpacks.config.SpectrumJetpacksConfig;
 import dev.mayaqq.spectrumJetpacks.networking.C2SPackets;
-import dev.mayaqq.spectrumJetpacks.registry.BlockEntityRegistry;
-import dev.mayaqq.spectrumJetpacks.registry.BlockRegistry;
 import dev.mayaqq.spectrumJetpacks.registry.ItemRegistry;
 import dev.mayaqq.spectrumJetpacks.registry.ServerEventRegistry;
 import me.shedaniel.autoconfig.AutoConfig;
@@ -28,8 +26,6 @@ public class SpectrumJetpacks implements ModInitializer {
 		AutoConfig.register(SpectrumJetpacksConfig.class, JanksonConfigSerializer::new);
 		CONFIG = AutoConfig.getConfigHolder(SpectrumJetpacksConfig.class).getConfig();
 		ItemRegistry.register();
-		BlockRegistry.register();
-		BlockEntityRegistry.register();
 		C2SPackets.register();
 		ServerEventRegistry.register();
 	}

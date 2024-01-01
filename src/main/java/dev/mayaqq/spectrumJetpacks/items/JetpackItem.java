@@ -1,11 +1,13 @@
 package dev.mayaqq.spectrumJetpacks.items;
 
+import de.dafuqs.spectrum.energy.InkStorage;
 import de.dafuqs.spectrum.energy.InkStorageItem;
 import de.dafuqs.spectrum.energy.color.InkColor;
 import de.dafuqs.spectrum.energy.storage.FixedSingleInkStorage;
+import de.dafuqs.spectrum.items.trinkets.AshenCircletItem;
 import de.dafuqs.spectrum.items.trinkets.SpectrumTrinketItem;
+import de.dafuqs.spectrum.registries.SpectrumItems;
 import dev.emi.trinkets.api.SlotReference;
-import dev.mayaqq.spectrumJetpacks.utils.JetpackPlayerExtension;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
@@ -40,6 +42,11 @@ public class JetpackItem extends SpectrumTrinketItem implements InkStorageItem<F
         this.maxHorizontalVelocity = maxHorizontalVelocity;
     }
 
+   @Override
+   public boolean canEquip(ItemStack stack, SlotReference slot, LivingEntity entity) {
+       return true;
+    }
+
     public float getHorizontalSpeed() {
         return this.horizontalSpeed;
     }
@@ -63,31 +70,31 @@ public class JetpackItem extends SpectrumTrinketItem implements InkStorageItem<F
         tooltip.add(Text.translatable("item.spectrumjetpacks.jetpack.desc.hover", hoverKey.getBoundKeyLocalizedText().getString().toUpperCase()).formatted(Formatting.GRAY));
         tooltip.add(Text.of(" "));
     }
-    @Override
-    public boolean canEquip(ItemStack stack, SlotReference slot, LivingEntity entity) {
-        return true;
-    }
 
     @Override
     public void onUnequip(ItemStack stack, SlotReference slot, LivingEntity entity) {
         super.onUnequip(stack, slot, entity);
-        ((JetpackPlayerExtension) entity).setHasRecentlyUsedJetPack(false);
     }
 
     @Override
     public FixedSingleInkStorage getEnergyStorage(ItemStack itemStack) {
         NbtCompound compound = itemStack.getNbt();
-        return compound != null && compound.contains("EnergyStore") ? FixedSingleInkStorage.fromNbt(compound.getCompound("EnergyStore")) : new FixedSingleInkStorage(this.maxInk, this.inkColor);
+        if (compound != null && compound.contains("EnergyStore")) {
+            return FixedSingleInkStorage.fromNbt(compound.getCompound("EnergyStore"));
+        }
+        return new FixedSingleInkStorage(maxInk, inkColor);
     }
 
     @Override
-    public void setEnergyStorage(ItemStack itemStack, FixedSingleInkStorage storage) {
-        NbtCompound compound = itemStack.getOrCreateNbt();
-        compound.put("EnergyStore", storage.toNbt());
+    public void setEnergyStorage(ItemStack itemStack, InkStorage storage) {
+        if (storage instanceof FixedSingleInkStorage fixedSingleInkStorage) {
+            NbtCompound compound = itemStack.getOrCreateNbt();
+            compound.put("EnergyStore", fixedSingleInkStorage.toNbt());
+        }
     }
 
     @Override
     public Drainability getDrainability() {
-        return Drainability.PLAYER_ONLY;
+        return Drainability.NEVER;
     }
 }
