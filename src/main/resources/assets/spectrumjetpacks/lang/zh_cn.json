@@ -1,0 +1,25 @@
+{
+  "itemGroup.spectrumjetpacks.jetpacks": "喷气背包",
+
+  "item.spectrumjetpacks.gemstone_jetpack": "宝石喷气背包",
+  "item.spectrumjetpacks.bedrock_jetpack": "基岩喷气背包",
+ 
+  "item.spectrumjetpacks.jetpack.desc.toggle": "启用: [%s]",
+    "item.spectrumjetpacks.jetpack.desc.hover": "悬浮: [%s]",
+
+  "category.spectrumjetpacks": "光谱世界：喷气背包",
+  "key.spectrumjetpacks.toggle": "启用喷气背包",
+  "key.spectrumjetpacks.hover": "启用喷气背包悬浮",
+  "key.spectrumjetpacks.boost": "喷气背包加速",
+
+
+  "text.autoconfig.spectrumjetpacks.title": "光谱世界：喷气背包",
+  "text.autoconfig.spectrumjetpacks.option.soundsEnabled": "启用喷气背包声音",
+  "text.autoconfig.spectrumjetpacks.option.inkUsagePerTick": "每刻墨水消耗量",
+  "text.autoconfig.spectrumjetpacks.option.inkUsagePerTickHovering": "悬浮时每刻墨水消耗量",
+
+  "advancements.spectrumjetpacks.craft_gemstone_jetpack.title": "去天空！",
+    "advancements.spectrumjetpacks.craft_gemstone_jetpack.description": "合成宝石喷气背包！",
+  "advancements.spectrumjetpacks.craft_bedrock_jetpack.title": "天空并非极限！",
+    "advancements.spectrumjetpacks.craft_bedrock_jetpack.description": "合成基岩喷气背包！"
+}
